@@ -9,7 +9,8 @@ class Student {
         self.name = name
         print("\(name) is initialized.")
         
-        self.assignHomework = {
+        self.assignHomework = { [weak self] in
+            guard let self = self else { return }
             print("\(self.name) is working on homework.")
         }
     }
